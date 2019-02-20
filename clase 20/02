@@ -1,0 +1,8 @@
+#obtener covarianza de la tasa de relacion salarial.(1/length(x))*sum((x-mean(x))*(y-mean(y)))
+base1<-read.csv("C://Users//ALUMNO-D10//Documents//tasa salarial y desempleo.csv")
+med1<-mean(base1$X10.2..Tasa.de.desocupación)
+med2<-mean(base1$X10.5..Tasa.de.trabajo.asalariado)
+covman<-sum((base1$X10.2..Tasa.de.desocupación-med1)*(base1$X10.5..Tasa.de.trabajo.asalariado-med2))/55
+cov(base1$X10.2..Tasa.de.desocupación, base1$X10.5..Tasa.de.trabajo.asalariado)
+corrman<-covman/(sqrt(var(base1$X10.2..Tasa.de.desocupación)*var(base1$X10.5..Tasa.de.trabajo.asalariado)))
+cor(base1$X10.2..Tasa.de.desocupación, base1$X10.5..Tasa.de.trabajo.asalariado)
