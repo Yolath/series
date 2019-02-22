@@ -1,0 +1,7 @@
+autoplot(cerveza2)+
+  autolayer(meanf(cerveza2, h=11), series = "media", PI=FALSE)+
+  autolayer(naive(cerveza2, h=11), series = "ingenuo", PI=FALSE)+
+  autolayer(rwf(cerveza2, h=11, drift = TRUE), series = "deriva", PI=FALSE)+
+  autolayer(snaive(cerveza2, h=11), series = "Ingenuo estacional", PI=FALSE)+
+  ggtitle("pronosticos de producción cerveza")+ xlab("año")+
+  ylab("miles de litros") +guides(colour=guide_legend(title = "pronostico"))
